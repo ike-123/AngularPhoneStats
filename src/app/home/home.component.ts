@@ -1,13 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { ChildComponent } from '../components/child/child.component';
+import { Component, inject } from '@angular/core';
+import { HomeService } from '../service/home.service';
 
 @Component({
   selector: 'app-home',
-  imports: [ChildComponent],
+  imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
 
-  message = signal("This is a message from home")
+  homeService = inject(HomeService)
 }
