@@ -1,23 +1,29 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { PhoneSpecs } from '../model/Phonespecs.type';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 
-type PhoneSpecs = {
-  id:number
-  name:string,
-  price:string
-}
+
 
 export class HomeService {
 
-  PhoneSpecsArray:Array<PhoneSpecs> = [
+  http = inject(HttpClient)
+
+  PhoneSpecsArray: Array<PhoneSpecs> = [
     {
-      id:1,
-      name:"iPhone 17 Pro Max",
-      price:"£999"
+      id: 1,
+      name: "iPhone 17 Pro Max",
+      price: "£999"
     }
   ]
   constructor() { }
+
+  GetPhones() {
+    const url = "https://icanhazdadjoke.com/search"
+    return this.http.get(url,{headers:{Accept:'application/json'}});
+  }
 }

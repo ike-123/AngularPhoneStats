@@ -1,1 +1,14 @@
 <p>home works!</p>
+
+<h1>Counter Value = {{counter()}} </h1>
+
+<div>
+    @for (joke of jokes(); track joke.id){
+
+        <div (click)="IncrementCounter()" class="jokeContainer">
+            <h1>
+                {{joke.joke}}
+            </h1>
+        </div>
+    }
+</div>

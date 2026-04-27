@@ -5,7 +5,9 @@ export const routes: Routes = [
         path: "",
         pathMatch:"full",
         loadComponent: ()=>{
-            return import('')
+            return import('./home/home.component').then(
+                (module)=> module.HomeComponent
+            )
         }
     }
 ];
