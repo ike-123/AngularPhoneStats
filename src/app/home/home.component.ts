@@ -1,10 +1,11 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { HomeService } from '../service/home.service';
 import { Joke } from '../model/Phonespecs.type';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [NgIf],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
